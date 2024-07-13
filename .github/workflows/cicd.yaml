@@ -27,7 +27,7 @@ jobs:
                 if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
 
             - name: Docker Build and Push
-              run:  |
+              run: |
                 docker build -t medical
                 docker tag medical mihir639/medical:latest
                 docker login -u ${{secrets.DOCKERHUB_USERNAME}} -P ${{secrets.DOCKERHUB_TOKEN}}
